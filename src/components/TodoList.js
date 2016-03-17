@@ -1,7 +1,17 @@
-import React, { PropTypes } from 'react'
-import Todo from './Todo'
+import React from 'react'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
+
+const Todo = ({ onClick, completed, text }) => (
+  <li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  </li>
+)
 
 const Todos = ({ todos, onTodoClick }) => (
   <ul>
